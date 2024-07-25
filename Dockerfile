@@ -15,8 +15,11 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
-# Expose port 3000
+# Expose port 5173
 EXPOSE 5173
 
 # Start the application
-CMD ["npm", "start"]
+# CMD ["npm", "start"]
+
+# Start the application with --host flag since Vite is not exposing the application to the network by default
+CMD ["npm", "run", "dev", "--", "--host"]
